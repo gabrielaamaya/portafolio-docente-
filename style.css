@@ -97,60 +97,229 @@ animation:flotar 3s infinite ease-in-out;
 100%{transform:translateY(0);}
 }
 
+
 /* CARDS */
 
-.cards{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:25px;
-padding:30px;
+/* Ilustración emoji grande arriba de la card */
+.card-ilustracion {
+  font-size: 72px;
+  line-height: 1;
+  margin-bottom: 16px;
+  display: block;
+  text-align: center;
+  width: 100%;
 }
 
-.card{
-background:white;
-padding:35px;
-border-radius:25px;
-text-align:center;
-box-shadow:0 8px 20px rgba(0,0,0,0.07);
-transition:.4s;
+/* Ocultar el ícono de Font Awesome (ya no se usa) */
+.card i {
+  display: none;
 }
 
-.card:hover{
-transform:translateY(-10px);
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 30px;
 }
 
-.card i{
-font-size:55px;
-margin-bottom:20px;
+.card {
+  padding: 28px 24px 24px;
+  border-radius: 20px;
+  text-align: left;
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  overflow: hidden;
 }
 
-.card h2{
-margin-bottom:15px;
-color:#072a66;
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
 }
 
-.card p{
-color:#555;
-margin-bottom:25px;
+/* Fondo de color suave por tarjeta */
+.card-azul,
+.azul {
+  background: #eaf1ff;
 }
 
-.card button{
-padding:14px 30px;
-border:none;
-border-radius:30px;
-color:white;
-font-size:18px;
-cursor:pointer;
+.card-amarillo,
+.amarillo {
+  background: #fff8e6;
 }
 
-.azul i{color:#1d63ff;}
-.azul button{background:#1d63ff;}
+.card-morado,
+.morado {
+  background: #f3ecff;
+}
 
-.amarillo i{color:#ffb400;}
-.amarillo button{background:#ffb400;}
+/* Ícono ilustración grande (arriba) */
+.card i {
+  font-size: 52px;
+  margin-bottom: 18px;
+  display: block;
+}
 
-.morado i{color:#a040ff;}
-.morado button{background:#a040ff;}
+.card-azul i, .azul i   { color: #1d63ff; }
+.card-amarillo i, .amarillo i { color: #ffb400; }
+.card-morado i, .morado i   { color: #a040ff; }
+
+/* Título con ícono pequeño al lado */
+.card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #0d1b4b;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Ícono pequeño junto al título */
+.card h3 .icon-title {
+  font-size: 18px;
+}
+
+.azul h3 .icon-title,
+.card-azul h3 .icon-title   { color: #1d63ff; }
+.amarillo h3 .icon-title,
+.card-amarillo h3 .icon-title { color: #ffb400; }
+.morado h3 .icon-title,
+.card-morado h3 .icon-title   { color: #a040ff; }
+
+/* Descripción */
+.card p {
+  color: #555;
+  margin-bottom: 22px;
+  font-size: 14.5px;
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+/* Botón "Explorar →" */
+.card button {
+  padding: 11px 22px;
+  border: none;
+  border-radius: 40px;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card button::after {
+  content: "→";
+  font-size: 16px;
+}
+
+.card button:hover {
+  opacity: 0.88;
+  transform: scale(1.03);
+}
+
+/* Colores de botón */
+.card-azul button, .azul button     { background: #1d63ff; }
+.card-amarillo button, .amarillo button { background: #ffb400; }
+.card-morado button, .morado button   { background: #a040ff; }
+
+/* Destellos decorativos de fondo (opcional) */
+.card::before,
+.card::after {
+  content: "✦";
+  position: absolute;
+  font-size: 10px;
+  opacity: 0.25;
+}
+
+.card::before { top: 14px; left: 16px; }
+.card::after  { bottom: 18px; right: 18px; font-size: 7px; }
+
+/* Contenedor de la ilustración con círculo blanco */
+.card-ilustracion {
+  width: 110px;
+  height: 110px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 58px;
+  margin: 0 auto 20px auto;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+
+/* Puntitos decorativos alrededor del círculo */
+.card-ilustracion::before {
+  content: "• • •";
+  position: absolute;
+  top: -22px;
+  left: -14px;
+  font-size: 20px;
+  letter-spacing: 5px;
+  opacity: 0.4;
+}
+
+.card-ilustracion::after {
+  content: "• •";
+  position: absolute;
+  bottom: -16px;
+  right: -12px;
+  font-size: 14px;
+  letter-spacing: 5px;
+  opacity: 0.3;
+}
+
+/* Color de los puntitos por tarjeta */
+.azul .card-ilustracion::before,
+.azul .card-ilustracion::after { color: #1d63ff; }
+
+.amarillo .card-ilustracion::before,
+.amarillo .card-ilustracion::after { color: #ffb400; }
+
+.morado .card-ilustracion::before,
+.morado .card-ilustracion::after { color: #a040ff; }
+
+/* Ocultar el ícono Font Awesome */
+.card i { display: none; }
+
+/* Centrar solo la ilustración, el resto queda a la izquierda */
+.card {
+  align-items: flex-start;
+}
+/* Línea decorativa debajo del título */
+.card h2 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #0d1b4b;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card h2::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  border-radius: 2px;
+  margin-top: 4px;
+}
+
+.azul h2::after     { background: #1d63ff; }
+.amarillo h2::after { background: #ffb400; }
+.morado h2::after   { background: #a040ff; }
+
+
+
 
 /* FOOTER */
 
@@ -164,17 +333,6 @@ align-items:center;
 margin-top:30px;
 }
 
-.redes i{
-font-size:35px;
-margin-left:20px;
-cursor:pointer;
-transition:.3s;
-}
-
-.redes i:hover{
-transform:scale(1.2);
-color:#3ddcff;
-}
 
 /* RESPONSIVE */
 
