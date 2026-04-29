@@ -1,0 +1,35 @@
+body{
+font-family:Arial;
+margin:0;
+background:#f5e9ff;
+}
+
+header{
+background:#8e44ad;
+color:white;
+padding:20px;
+display:flex;
+justify-content:space-between;
+}
+
+header a{
+color:white;
+text-decoration:none;
+}
+
+.contenedor{
+display:flex;
+gap:20px;
+padding:40px;
+justify-content:center;
+flex-wrap:wrap;
+}
+
+.card{
+background:white;
+padding:20px;
+width:250px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+text-align:center;
+}
