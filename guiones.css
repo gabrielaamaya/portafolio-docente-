@@ -33,3 +33,30 @@ border-radius:15px;
 box-shadow:0 5px 15px rgba(0,0,0,.1);
 text-align:center;
 }
+
+/* ===== BOTÓN VER ===== */
+button{
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #f4b400, #ffcc33);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* Hover (cuando pasas el mouse) */
+button:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+  background: linear-gradient(135deg, #ffcc33, #f4b400);
+}
+
+/* Click (efecto al presionar) */
+button:active{
+  transform: scale(0.95);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}

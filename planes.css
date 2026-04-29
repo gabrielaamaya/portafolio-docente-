@@ -1,44 +1,88 @@
 body{
-font-family:Arial;
-margin:0;
-background:#f4f8ff;
+  font-family: Arial;
+  margin:0;
+  background:#f4f8ff;
 }
 
+/* HEADER */
 header{
-background:#0056d6;
-color:white;
-padding:20px;
-display:flex;
-justify-content:space-between;
+  background:#0056d6;
+  color:white;
+  padding:20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
 
 header a{
-color:white;
-text-decoration:none;
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
 }
 
+/* CONTENEDOR */
 .contenedor{
-display:flex;
-gap:20px;
-padding:40px;
-flex-wrap:wrap;
-justify-content:center;
+  display:flex;
+  gap:20px;
+  padding:40px;
+  flex-wrap:wrap;
+  justify-content:center;
 }
 
+/* CARDS BONITAS */
 .card{
-background:white;
-padding:20px;
-border-radius:15px;
-width:250px;
-box-shadow:0 5px 15px rgba(0,0,0,.1);
-text-align:center;
+  padding:25px;
+  border-radius:20px;
+  width:260px;
+  text-align:center;
+  color:white;
+  box-shadow:0 8px 20px rgba(0,0,0,.15);
+  transition:transform 0.3s ease;
 }
 
+/* EFECTO HOVER */
+.card:hover{
+  transform:translateY(-10px);
+}
+
+/* COLORES DIFERENTES PARA CADA CARD */
+.card:nth-child(1){
+  background:linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.card:nth-child(2){
+  background:linear-gradient(135deg, #43cea2, #185a9d);
+}
+
+.card:nth-child(3){
+  background:linear-gradient(135deg, #ff9966, #ff5e62);
+}
+
+.card:nth-child(4){
+  background:linear-gradient(135deg, #36d1dc, #5b86e5);
+}
+
+.card:nth-child(5){
+  background:linear-gradient(135deg, #ff512f, #dd2476);
+}
+
+
+/* BOTÓN GRANDE Y MODERNO */
 button{
-background:#0056d6;
-color:white;
-border:none;
-padding:10px 20px;
-border-radius:10px;
-cursor:pointer;
+  background:white;
+  color:#0056d6;
+  border:none;
+  padding:15px 30px;
+  border-radius:30px;
+  cursor:pointer;
+  font-size:16px;
+  font-weight:bold;
+  margin-top:15px;
+  transition:all 0.3s ease;
+}
+
+/* EFECTO BOTÓN */
+button:hover{
+  background:#000;
+  color:white;
 }

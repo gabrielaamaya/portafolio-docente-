@@ -17,10 +17,23 @@ botones[0].addEventListener("click", function () {
     window.location.href = "planes.html";
 });
 
+
+function abrirDoc(ruta) {
+  window.open(ruta, "_blank");}
+
+
 botones[1].addEventListener("click", function () {
     window.location.href = "guiones.html";
 });
 
+
+function abrirDoc(ruta) {
+  window.open(ruta, "_blank");}
+
 botones[2].addEventListener("click", function () {
     window.location.href = "diplomas.html";
 });
+
+
+
+
