@@ -23,8 +23,53 @@
 <img src="sistema de gestion antisoborno.jpg">
 <img src="Tecnico operador de windows.jpeg">
 <img src="tecnologia aplicada a la educacion.jpeg">
+<img src="1.png">
+<img src="2.png">
+<img src="3.png">
+<img src="4.png">
+<img src="5.png">
+<img src="6.png">
+<img src="7.png">
+<img src="8.png">
+<img src="9.png">
+<img src="10.png">
+<img src="11.png">
+<img src="12.png">
+<img src="13.png">
 
 </section>
+
+<!-- 🔥 VISOR DE IMÁGENES -->
+<div id="visor" class="visor">
+  <span class="cerrar">&times;</span>
+  <img id="imgGrande">
+</div>
+
+<!-- 🔥 SCRIPT PARA ZOOM -->
+<script>
+const imagenes = document.querySelectorAll('.galeria img');
+const visor = document.getElementById('visor');
+const imgGrande = document.getElementById('imgGrande');
+const cerrar = document.querySelector('.cerrar');
+
+imagenes.forEach(img => {
+  img.addEventListener('click', () => {
+    visor.style.display = 'flex';
+    imgGrande.src = img.src;
+  });
+});
+
+cerrar.addEventListener('click', () => {
+  visor.style.display = 'none';
+});
+
+/* cerrar dando clic fuera */
+visor.addEventListener('click', (e) => {
+  if(e.target === visor){
+    visor.style.display = 'none';
+  }
+});
+</script>
 
 </body>
 </html>

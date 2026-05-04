@@ -27,3 +27,28 @@ btnPortafolio.onclick = () => {
 function abrirDoc(ruta, tipo) {
     window.location.href = ruta;
 }
+
+
+// GALERÍA DE IMÁGENES
+const imagenes = document.querySelectorAll('.galeria img');
+const visor = document.getElementById('visor');
+const imgGrande = document.getElementById('imgGrande');
+const cerrar = document.querySelector('.cerrar');
+
+imagenes.forEach(img => {
+  img.addEventListener('click', () => {
+    visor.style.display = 'flex';
+    imgGrande.src = img.src;
+  });
+});
+
+cerrar.addEventListener('click', () => {
+  visor.style.display = 'none';
+});
+
+/* cerrar al hacer clic fuera */
+visor.addEventListener('click', (e) => {
+  if(e.target === visor){
+    visor.style.display = 'none';
+  }
+});
