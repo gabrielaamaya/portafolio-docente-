@@ -9,31 +9,21 @@ window.addEventListener("scroll", function () {
     }
 });
 
-
-// BOTONES EXPLORAR
+// BOTONES PRINCIPALES
 const botones = document.querySelectorAll(".card button");
 
-botones[0].addEventListener("click", function () {
-    window.location.href = "planes.html";
-});
+botones[0].onclick = () => window.location.href = "planes.html";
+botones[1].onclick = () => window.location.href = "guiones.html";
+botones[2].onclick = () => window.location.href = "diplomas.html";
 
+// BOTÓN PORTAFOLIO DOCENTE (ABRIR EN MISMA PESTAÑA)
+const btnPortafolio = document.querySelector(".hero button");
 
-function abrirDoc(ruta) {
-  window.open(ruta, "_blank");}
+btnPortafolio.onclick = () => {
+    window.location.href = "Portafolio docente.pdf";
+};
 
-
-botones[1].addEventListener("click", function () {
-    window.location.href = "guiones.html";
-});
-
-
-function abrirDoc(ruta) {
-  window.open(ruta, "_blank");}
-
-botones[2].addEventListener("click", function () {
-    window.location.href = "diplomas.html";
-});
-
-
-
-
+// ABRIR DOCUMENTOS
+function abrirDoc(ruta, tipo) {
+    window.location.href = ruta;
+}

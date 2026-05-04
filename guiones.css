@@ -1,40 +1,82 @@
 body{
-font-family:Arial;
-margin:0;
-background:#fff9e6;
+  font-family:Arial;
+  margin:0;
+  background:#fff9e6;
 }
 
+/* HEADER */
 header{
-background:#f4b400;
-color:white;
-padding:20px;
-display:flex;
-justify-content:space-between;
+  background:#f4b400;
+  color:white;
+  padding:20px;
+  display:flex;
+  justify-content:space-between;
+  position:relative;
+
+  /* animación */
+  animation:fadeDown 0.8s ease;
 }
 
+/* BOTÓN VOLVER */
 header a{
-color:white;
-text-decoration:none;
+  position:absolute;
+  top:25px;
+  right:25px;
+  background:white;
+  color:#f4b400;
+  text-decoration:none;
+  font-weight:bold;
+  padding:14px 18px;
+  border-radius:12px;
+  box-shadow:0 8px 18px rgba(0,0,0,0.20);
+  z-index:1000;
+  transition:all 0.3s ease;
 }
 
+header a:hover{
+  background:#000;
+  color:white;
+  transform:translateY(-5px) scale(1.05);
+}
+
+/* CONTENEDOR */
 .contenedor{
-display:flex;
-gap:20px;
-padding:40px;
-justify-content:center;
-flex-wrap:wrap;
+  display:flex;
+  gap:20px;
+  padding:40px;
+  justify-content:center;
+  flex-wrap:wrap;
 }
 
+/* CARDS CON ANIMACIÓN */
 .card{
-background:white;
-padding:20px;
-width:250px;
-border-radius:15px;
-box-shadow:0 5px 15px rgba(0,0,0,.1);
-text-align:center;
+  background:white;
+  padding:20px;
+  width:250px;
+  border-radius:15px;
+  box-shadow:0 5px 15px rgba(0,0,0,.1);
+  text-align:center;
+
+  /* animación inicial */
+  opacity:0;
+  transform:translateY(30px);
+  animation:fadeUp 0.8s ease forwards;
 }
 
-/* ===== BOTÓN VER ===== */
+/* aparición escalonada */
+.card:nth-child(1){ animation-delay:0.1s; }
+.card:nth-child(2){ animation-delay:0.2s; }
+.card:nth-child(3){ animation-delay:0.3s; }
+.card:nth-child(4){ animation-delay:0.4s; }
+.card:nth-child(5){ animation-delay:0.5s; }
+
+/* hover en card */
+.card:hover{
+  transform:translateY(-10px) scale(1.03);
+  box-shadow:0 12px 25px rgba(0,0,0,0.2);
+}
+
+/* BOTÓN VER */
 button{
   margin-top: 15px;
   padding: 10px 20px;
@@ -44,19 +86,39 @@ button{
   border-radius: 10px;
   font-size: 14px;
   cursor: pointer;
+
   transition: all 0.3s ease;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
-/* Hover (cuando pasas el mouse) */
+/* hover botón */
 button:hover{
-  transform: translateY(-3px);
-  box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.25);
   background: linear-gradient(135deg, #ffcc33, #f4b400);
 }
 
-/* Click (efecto al presionar) */
+/* click botón */
 button:active{
-  transform: scale(0.95);
+  transform: scale(0.92);
   box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+
+/* 🔥 ANIMACIONES */
+@keyframes fadeUp{
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@keyframes fadeDown{
+  from{
+    opacity:0;
+    transform:translateY(-30px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
 }

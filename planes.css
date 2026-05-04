@@ -12,12 +12,32 @@ header{
   display:flex;
   justify-content:space-between;
   align-items:center;
+  position:relative;
+
+  /* animación */
+  animation:fadeDown 0.8s ease;
 }
 
+/* BOTÓN VOLVER */
 header a{
-  color:white;
+  position:absolute;
+  top:25px;
+  right:25px;
+  background:white;
+  color:#0056d6;
   text-decoration:none;
   font-weight:bold;
+  padding:14px 18px;
+  border-radius:12px;
+  box-shadow:0 8px 18px rgba(0,0,0,0.20);
+  z-index:1000;
+  transition:all 0.3s ease;
+}
+
+header a:hover{
+  background:#000;
+  color:white;
+  transform:translateY(-5px) scale(1.05);
 }
 
 /* CONTENEDOR */
@@ -29,7 +49,7 @@ header a{
   justify-content:center;
 }
 
-/* CARDS BONITAS */
+/* CARDS */
 .card{
   padding:25px;
   border-radius:20px;
@@ -37,37 +57,44 @@ header a{
   text-align:center;
   color:white;
   box-shadow:0 8px 20px rgba(0,0,0,.15);
-  transition:transform 0.3s ease;
+
+  /* animación inicial */
+  opacity:0;
+  transform:translateY(30px);
+  animation:fadeUp 0.8s ease forwards;
 }
 
-/* EFECTO HOVER */
+/* aparición escalonada */
+.card:nth-child(1){ animation-delay:0.1s; }
+.card:nth-child(2){ animation-delay:0.2s; }
+.card:nth-child(3){ animation-delay:0.3s; }
+.card:nth-child(4){ animation-delay:0.4s; }
+.card:nth-child(5){ animation-delay:0.5s; }
+
+/* HOVER PRO */
 .card:hover{
-  transform:translateY(-10px);
+  transform:translateY(-12px) scale(1.03);
+  box-shadow:0 15px 30px rgba(0,0,0,.25);
 }
 
-/* COLORES DIFERENTES PARA CADA CARD */
+/* COLORES */
 .card:nth-child(1){
   background:linear-gradient(135deg, #667eea, #764ba2);
 }
-
 .card:nth-child(2){
   background:linear-gradient(135deg, #43cea2, #185a9d);
 }
-
 .card:nth-child(3){
   background:linear-gradient(135deg, #ff9966, #ff5e62);
 }
-
 .card:nth-child(4){
   background:linear-gradient(135deg, #36d1dc, #5b86e5);
 }
-
 .card:nth-child(5){
   background:linear-gradient(135deg, #ff512f, #dd2476);
 }
 
-
-/* BOTÓN GRANDE Y MODERNO */
+/* BOTÓN */
 button{
   background:white;
   color:#0056d6;
@@ -81,8 +108,27 @@ button{
   transition:all 0.3s ease;
 }
 
-/* EFECTO BOTÓN */
 button:hover{
   background:#000;
   color:white;
+  transform:scale(1.05);
+}
+
+/* 🔥 ANIMACIONES */
+@keyframes fadeUp{
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@keyframes fadeDown{
+  from{
+    opacity:0;
+    transform:translateY(-30px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
 }

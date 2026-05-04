@@ -40,16 +40,18 @@
 </div>
 
 <div class="card">
-<h2>segundo año de bachillerato</h2>
+<h2>Segundo año de bachillerato</h2>
 <p>Plan de unidad Ciudadania y Valores</p>
 <button onclick="abrirDoc('plan-unidad/segundo.pdf')">Ver</button>
 </div>
 
-
 </section>
 
-
-<script src="script.js"></script>
+<script>
+function abrirDoc(ruta){
+    window.open(ruta, "planes");
+}
+</script>
 
 </body>
 </html>
